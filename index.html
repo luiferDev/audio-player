@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div class="container-carrousel">
+    <div class="carruseles">
+      <section class="slider-section">
+
+        <img src="./cover-1.png" alt="">
+        <div>
+          <h4>Lost in the City Lights</h4>
+          <p>Cosmo Sheldrake</p>
+        </div>
+
+
+        <div class="audio-duration">
+          <div class="start">00:00</div>
+          <div class="end">01:12</div>
+        </div>
+
+        <audio class="player__audio" controls id="audio">
+          <source src="./lost-in-city-lights-145038.mp3" type="audio/mpeg">
+        </audio>
+        <div>
+          <img src="./Stop_and_play_fill-1.svg" alt="">
+
+          <img src="./Stop_and_play_fill.svg" alt="play">
+
+          <img src="./Stop_and_play_fill.svg" alt="">
+        </div>
+      </section>
+
+      <section class="slider-section">
+
+        <img src="./cover-2.png" alt="">
+        <div>
+          <h4>Forest Lullaby</h4>
+          <p>Lesfm</p>
+        </div>
+
+        <audio src="./forest-lullaby-110624.mp3" controls></audio>
+        <div>
+          <img src="./Stop_and_play_fill-1.svg" alt="">
+
+          <img src="./Stop_and_play_fill.svg" alt="play">
+
+          <img src="./Stop_and_play_fill.svg" alt="">
+        </div>
+        <img src="" alt="">
+      </section>
+
+    </div>
+  </div>
+  <div id="app"></div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

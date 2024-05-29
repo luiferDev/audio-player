@@ -1,0 +1,42 @@
+:root {
+  background-color: #f2f2f2;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container-carrousel{
+  width: 300px;
+  height: 500px;
+  /* overflow: hidden; */
+}
+
+.carruseles{
+  width: 200%;
+  height: 100%;
+  display: flex;
+}
+
+.slider-section{
+  width: calc(100% / 2);
+  height: 100%;
+}
+
+.slider-section > img:nth-child(1){
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
