@@ -1,10 +1,28 @@
 const btnLeft = document.querySelector(".btn-left"),
   btnRight = document.querySelector(".btn-rigth"),
   slider = document.querySelector("#slider"),
-  sliderSection = document.querySelectorAll(".slider-section")
+  sliderSection = document.querySelectorAll(".slider-section"),
+  btnPlay = document.querySelector(".play-btn"),
+  audio = document.querySelector(".player__audio")
 
 btnLeft.addEventListener("click", e => moveToLeft())
 btnRight.addEventListener("click", e => moveToRigth())
+btnPlay.addEventListener("click", e => playAudio())
+// btnPlay.addEventListener("click", e => pauseAudio())
+
+function playAudio() {
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}
+
+// function pauseAudio() {
+//   if (audio == audio.play()) return
+//   audio.pause()
+// }
+
 
 let operator = 0,
   position = 0,
