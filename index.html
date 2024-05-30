@@ -8,10 +8,9 @@
   <link rel="stylesheet" href="./style.css">
   <title>Vite App</title>
 </head>
-
 <body>
   <div class="container-carrousel">
-    <div class="carruseles">
+    <div class="carruseles" id="slider">
       <section class="slider-section">
 
         <img src="./cover-1.png" alt="">
@@ -29,13 +28,7 @@
         <audio class="player__audio" controls id="audio">
           <source src="./lost-in-city-lights-145038.mp3" type="audio/mpeg">
         </audio>
-        <div>
-          <img src="./Stop_and_play_fill-1.svg" alt="">
 
-          <img src="./Stop_and_play_fill.svg" alt="play">
-
-          <img src="./Stop_and_play_fill.svg" alt="">
-        </div>
       </section>
 
       <section class="slider-section">
@@ -47,20 +40,23 @@
         </div>
 
         <audio src="./forest-lullaby-110624.mp3" controls></audio>
-        <div>
-          <img src="./Stop_and_play_fill-1.svg" alt="">
 
-          <img src="./Stop_and_play_fill.svg" alt="play">
-
-          <img src="./Stop_and_play_fill.svg" alt="">
-        </div>
         <img src="" alt="">
       </section>
 
     </div>
   </div>
   <div id="app"></div>
-  <script type="module" src="/main.js"></script>
+
+  <div class="controllers">
+    <img class="btn-left" src="./Stop_and_play_fill-1.svg" alt="">
+
+    <img class="play-btn" src="./Stop_and_play_fill.svg" alt="play">
+
+    <img class="btn-rigth" src="./Stop_and_play_fill.svg" alt="">
+  </div>
+
+  <script src="/main.js" defer></script>
 </body>
 
 </html>

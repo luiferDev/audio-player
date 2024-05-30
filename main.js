@@ -1,31 +1,41 @@
-var audio = document.getElementById('audio');
-var reproductor = document.getElementById('reproductor');
-var barra = document.getElementById('barra');
-var tiempo = document.getElementById('tiempo');
+const btnLeft = document.querySelector(".btn-left"),
+  btnRight = document.querySelector(".btn-rigth"),
+  slider = document.querySelector("#slider"),
+  sliderSection = document.querySelectorAll(".slider-section")
 
-audio.addEventListener('loadedmetadata', function() {
-  reproductor.addEventListener('click', function(e) {
-    var x = e.offsetX / this.offsetWidth;
-    audio.currentTime = x * audio.duration;
-  });
+btnLeft.addEventListener("click", e => moveToLeft())
+btnRight.addEventListener("click", e => moveToRigth())
 
-  audio.addEventListener('timeupdate', function() {
-    var porcentaje = (audio.currentTime / audio.duration) * 100;
-    barra.style.width = porcentaje + '%';
+let operator = 0,
+  position = 0,
+  widthSections = 100 / sliderSection.length
 
-    var minutos = Math.floor(audio.currentTime / 60);
-    var segundos = Math.floor(audio.currentTime - minutos * 60);
-    var duracionMinutos = Math.floor(audio.duration / 60);
-    var duracionSegundos = Math.floor(audio.duration - duracionMinutos * 60);
+function moveToRigth() {
+  if (position >= sliderSection.length - 1) {
+    operator = 0
+    position = 0
+    slider.style.transform = `translateX(-${operator}%)`
+    slider.style.transition = "none"
+    return
+  }
+  position++
+  operator = operator + widthSections
+  slider.style.transform = `translateX(-${operator}%)`
+  slider.style.transition = "all ease-in .5s"
 
-    tiempo.textContent = minutos + ':' + segundos + ' / ' + duracionMinutos + ':' + duracionSegundos;
-  });
+}
 
-  reproductor.addEventListener('mouseenter', function() {
-    audio.play();
-  });
+function moveToLeft() {
+  position--
+  if (position < 0) {
+    operator = widthSections * (sliderSection.length - 1)
+    position = sliderSection.length - 1
+    slider.style.transform = `translateX(-${operator}%)`
+    slider.style.transition = "none"
+    return
+  }
+  operator = operator - widthSections
+  slider.style.transform = `translateX(-${operator}%)`
+  slider.style.transition = "all ease .5s"
 
-  reproductor.addEventListener('mouseleave', function() {
-    audio.pause();
-  });
-});
+}
